@@ -21,8 +21,8 @@
 </head>
 <body>
 
-<h2>Danh sách cầu thủ bóng đá</h2>
-<table>
+<h2 class="text-center">Danh sách cầu thủ bóng đá</h2>
+<table class="table table-striped">
     <thead>
     <tr>
         <th>Số thứ tự</th>
@@ -41,7 +41,7 @@
             <td>${football.dateOfBirth}</td>
             <td>${football.experience}</td>
             <td>${football.location}</td>
-            <td>${football.image}</td>
+            <td><img src="${football.image}" alt="" width="100" height="100"></td>
         </tr>
     </c:forEach>
     </tbody>
