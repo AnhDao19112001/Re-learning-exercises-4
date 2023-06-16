@@ -26,32 +26,32 @@
 <table class="table table-striped table-inverse table-responsive">
     <tr>
         <td>Số thứ tự:</td>
-        <td ${player.id}></td>
+        <td>${player.id}</td>
     </tr>
 
     <tr>
         <td>Tên:</td>
-        <td ${player.name}></td>
+        <td>${player.name}</td>
     </tr>
 
     <tr>
         <td>Ngày sinh:</td>
-        <td ${player.dateOfBirth}></td>
+        <td> ${player.dateOfBirth}</td>
     </tr>
 
     <tr>
         <td>Kinh nghiệm:</td>
-        <td ${player.experience}></td>
+        <td> ${player.experience}</td>
     </tr>
 
     <tr>
         <td>Vị trí:</td>
-        <td ${player.location}></td>
+        <td> ${player.location}</td>
     </tr>
 
     <tr>
         <td>Hình ảnh:</td>
-        <td ${player.image}></td>
+        <td><img src="${player.image}" alt="" width="100" height="100"></td>
     </tr>
 </table>
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class FootballPlayerImpl implements IFootballPlayerRepository {
+public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
     private static final List<FootballPlayer> playerList = new ArrayList<>();
 
     static {
@@ -36,6 +36,6 @@ public class FootballPlayerImpl implements IFootballPlayerRepository {
 
     @Override
     public void delete(int id) {
-
+        playerList.remove(findById(id));
     }
 }

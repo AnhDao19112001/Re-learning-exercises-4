@@ -17,17 +17,16 @@ public class FootballPlayerController {
     @GetMapping("/player")
     public String formFootball(Model model) {
         model.addAttribute("player", iFootballPlayerService.findAll());
-        return "/home";
+        return "home";
     }
     @GetMapping("/info/{id}")
     public String formInfo(@PathVariable int id, Model model){
         model.addAttribute("player",iFootballPlayerService.findById(id));
-        return "/info";
+        return "info";
     }
     @GetMapping("/delete")
-    public String delete(@RequestParam int idDelete, RedirectAttributes redirectAttributes){
-        iFootballPlayerService.delete(idDelete);
-        redirectAttributes.addFlashAttribute("msg","Bạn đã xóa thành công!");
-        return "/home";
+    private void delete(@RequestParam("idDelete") Integer id, RedirectAttributes redirectAttributes) {
+        this.iFootballPlayerService.delete(id);
+        redirectAttributes.addFlashAttribute("message", "Xóa thành công!");
     }
 }
