@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 @Repository
-public class FootballPlayerImpl implements IFootballPlayerRepository {
+public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
     private static List<FootballPlayer> playerList = new ArrayList<>();
     static {
         playerList.add(new FootballPlayer(1,"Alphonso Davies","19-11-2001","2 năm","Hậu vệ","https://img.fcbayern.com/image/upload/t_cms-1x1-seo/v1656615722/cms/public/images/fcbayern-com/players/spielerportraits/ganzkoerper/alphonso_davies.png"));
