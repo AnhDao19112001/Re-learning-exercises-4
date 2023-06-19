@@ -26,7 +26,9 @@ public class FootballPlayerController {
     }
     @GetMapping("/delete")
     private void delete(@RequestParam("idDelete") Integer id, RedirectAttributes redirectAttributes) {
-        this.iFootballPlayerService.delete(id);
-        redirectAttributes.addFlashAttribute("message", "Xóa thành công!");
+        if (this.iFootballPlayerService.delete(id)) {
+            redirectAttributes.addFlashAttribute("msg", "Xóa thành công!");
+        }
+        redirectAttributes.addFlashAttribute("msg","Không thể xóa hoặc không tồn tại!");
     }
 }
