@@ -18,12 +18,15 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<div>
+    <h3 class="text-center">Thông tin chi tiết</h3>
 
-<h3>Thông tin chi tiết</h3>
+    <a href="/player" class="btn btn-primary" style="margin: 0 0 15px 55px">Quay về trang chính</a>
+</div>
 
-<a href="/player">Quay về trang chính</a>
 
-<table class="table table-striped table-inverse table-responsive">
+
+<table class="table table-striped table-inverse table-responsive container">
     <tr>
         <td>Số thứ tự:</td>
         <td>${player.id}</td>
@@ -51,7 +54,7 @@
 
     <tr>
         <td>Hình ảnh:</td>
-        <td><img src="${player.image}" alt="" width="100" height="100"></td>
+        <td><img src="${player.image}" alt="" width="200" height="200"></td>
     </tr>
 </table>
 

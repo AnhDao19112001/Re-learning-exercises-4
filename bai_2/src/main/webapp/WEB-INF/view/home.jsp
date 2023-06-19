@@ -22,13 +22,13 @@
 <body>
 
 <h2 class="text-center">Danh sách cầu thủ bóng đá</h2>
-<table class="table table-striped">
+<table class="table table-striped container">
     <thead>
     <tr>
         <th>Số thứ tự</th>
         <th>Họ và tên</th>
         <th>Vị trí</th>
-        <th>Ảnh</th>
+<%--        <th>Ảnh</th>--%>
         <th>Xóa</th>
     </tr>
     </thead>
@@ -38,7 +38,7 @@
             <td>${football.id}</td>
             <td><a href="info/${football.id}">${football.name}</a></td>
             <td>${football.location}</td>
-            <td><img src="${football.image}" alt="" width="100" height="100"></td>
+<%--            <td><img src="${football.image}" alt="" width="100" height="100"></td>--%>
             <td>
                 <button attr="onclick=|deletePlayer('${football.id}', '${football.name}')|"
                         class="btn btn-danger btn-outline-secondary btn-sm" data-bs-toggle="modal"
