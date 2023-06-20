@@ -28,8 +28,11 @@ public class FootballPlayerController {
 
     @GetMapping("/delete")
     private String delete(@RequestParam Integer idDelete, RedirectAttributes redirectAttributes) {
-        iFootballPlayerService.delete(idDelete);
-        redirectAttributes.addFlashAttribute("msg","Xóa thành công!");
+        if ( this.iFootballPlayerService.delete(idDelete)){
+            redirectAttributes.addFlashAttribute("msg","Xóa thành công!");
+        }
+        redirectAttributes.addFlashAttribute("msg","Không tìm thấy!");
+
         return "redirect:/player";
     }
     @GetMapping("/create")

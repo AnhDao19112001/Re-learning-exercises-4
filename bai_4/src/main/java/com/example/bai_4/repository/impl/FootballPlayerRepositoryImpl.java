@@ -35,8 +35,9 @@ public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
     }
 
     @Override
-    public void delete(int id) {
+    public boolean delete(int id) {
         playerList.remove(findById(id));
+        return false;
     }
 
     @Override

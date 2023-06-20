@@ -7,7 +7,7 @@ import java.util.List;
 public interface IFootballPlayerService {
     List<FootballPlayer> findAll();
     FootballPlayer findById(int id);
-    void delete(int id);
+    boolean delete(int id);
     void create(FootballPlayer footballPlayer);
     void edit (FootballPlayer footballPlayer);
 }

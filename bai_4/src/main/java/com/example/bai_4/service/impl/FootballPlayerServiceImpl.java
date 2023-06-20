@@ -22,8 +22,12 @@ public class FootballPlayerServiceImpl implements IFootballPlayerService {
     }
 
     @Override
-    public void delete(int id) {
-        iFootballPlayerRepository.delete(id);
+    public boolean delete(int id) {
+        if (this.iFootballPlayerRepository.delete(id)){
+            return true;
+        }
+
+        return false;
     }
 
     @Override
