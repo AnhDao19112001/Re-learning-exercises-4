@@ -10,14 +10,14 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-
+<nav th:replace="~{/layout :: header}"></nav>
 <h2 class="text-center">Trang quản lý cầu thủ</h2>
 <button type="submit" class="btn"><a style="text-decoration: white" href="/create">Thêm mới cầu thủ</a>
 </button>
 
 <p style="color: greenyellow" th:text="${msg}"></p>
 
-<table class="table">
+<table class="table container">
     <thead>
     <tr>
         <th>Số thứ tự</th>
@@ -67,6 +67,8 @@
         </div>
     </div>
 </div>
+
+<footer th:replace="~{/footer :: footer}"></footer>
 
 <script>
     function info(id, name) {
