@@ -34,7 +34,7 @@ public class FootballPlayerServiceImpl implements IFootballPlayerService {
     }
 
     @Override
-    public boolean edit(FootballPlayer footballPlayer) {
+    public Boolean edit(FootballPlayer footballPlayer) {
         return this.iFootballPlayerRepository.edit(footballPlayer);
     }
 }

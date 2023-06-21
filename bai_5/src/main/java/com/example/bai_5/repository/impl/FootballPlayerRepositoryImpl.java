@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Repository
@@ -28,6 +29,8 @@ public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
         try {
             session = ConnectionUtil.sessionFactory.openSession();
             footballPlayer = (FootballPlayer) session.createQuery("FROM FootballPlayer where id = :id").setParameter("id", id).getSingleResult();
+        } catch (NoResultException noResultException) {
+            return null;
         } finally {
             if (session != null) {
                 session.close();
@@ -46,6 +49,8 @@ public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
             transaction = session.beginTransaction();
             session.delete(footballPlayer);
             transaction.commit();
+        } catch (NoResultException noResultException) {
+            return null;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -79,7 +84,7 @@ public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
     }
 
     @Override
-    public boolean edit(FootballPlayer footballPlayer) {
+    public Boolean edit(FootballPlayer footballPlayer) {
         Transaction transaction = null;
         Session session = null;
         try {
@@ -87,6 +92,8 @@ public class FootballPlayerRepositoryImpl implements IFootballPlayerRepository {
             transaction = session.beginTransaction();
             session.update(footballPlayer);
             transaction.commit();
+        } catch (NoResultException noResultException) {
+            return null;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();

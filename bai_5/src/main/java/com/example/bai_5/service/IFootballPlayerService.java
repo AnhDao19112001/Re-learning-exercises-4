@@ -9,5 +9,5 @@ public interface IFootballPlayerService {
     FootballPlayer findById(int id);
     Boolean delete(int id);
     void create(FootballPlayer footballPlayer);
-    boolean edit (FootballPlayer footballPlayer);
+    Boolean edit (FootballPlayer footballPlayer);
 }
