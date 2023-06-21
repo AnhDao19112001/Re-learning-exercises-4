@@ -1,12 +1,14 @@
-package com.example.bai_4.controller;
+package com.example.bai_5.controller;
 
-import com.example.bai_4.model.FootballPlayer;
-import com.example.bai_4.service.IFootballPlayerService;
+import com.example.bai_5.model.FootballPlayer;
+import com.example.bai_5.service.IFootballPlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 
@@ -16,7 +18,8 @@ public class FootballPlayerController {
 
     @GetMapping("/player")
     public String formFootball(Model model) {
-        model.addAttribute("player", iFootballPlayerService.findAll());
+        List<FootballPlayer> footballPlayers = iFootballPlayerService.findAll();
+        model.addAttribute("player", footballPlayers);
         return "/list";
     }
 
@@ -63,7 +66,7 @@ public class FootballPlayerController {
     @PostMapping("/update")
     public String edit(@ModelAttribute FootballPlayer footballPlayer, RedirectAttributes redirectAttributes){
         iFootballPlayerService.edit(footballPlayer);
-        redirectAttributes.addFlashAttribute("msg", "Chỉnh sửa thành công!");
+        redirectAttributes.addFlashAttribute("msg","Chỉnh sửa thành công!");
         return "redirect:/player";
     }
 }

@@ -1,16 +1,18 @@
-package com.example.bai_4.service.impl;
+package com.example.bai_5.service.impl;
 
-import com.example.bai_4.model.FootballPlayer;
-import com.example.bai_4.repository.IFootballPlayerRepository;
-import com.example.bai_4.service.IFootballPlayerService;
+import com.example.bai_5.model.FootballPlayer;
+import com.example.bai_5.repository.IFootballPlayerRepository;
+import com.example.bai_5.service.IFootballPlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class FootballPlayerServiceImpl implements IFootballPlayerService {
     @Autowired
     private IFootballPlayerRepository iFootballPlayerRepository;
+
     @Override
     public List<FootballPlayer> findAll() {
         return iFootballPlayerRepository.findAll();
@@ -23,11 +25,7 @@ public class FootballPlayerServiceImpl implements IFootballPlayerService {
 
     @Override
     public Boolean delete(int id) {
-        if (this.iFootballPlayerRepository.delete(id)){
-            return true;
-        }
-
-        return false;
+        return this.iFootballPlayerRepository.delete(id);
     }
 
     @Override
@@ -36,7 +34,7 @@ public class FootballPlayerServiceImpl implements IFootballPlayerService {
     }
 
     @Override
-    public void edit(FootballPlayer footballPlayer) {
-        iFootballPlayerRepository.edit(footballPlayer);
+    public boolean edit(FootballPlayer footballPlayer) {
+        return this.iFootballPlayerRepository.edit(footballPlayer);
     }
 }

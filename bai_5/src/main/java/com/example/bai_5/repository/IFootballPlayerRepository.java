@@ -1,5 +1,5 @@
-package com.example.bai_4.repository;
-import com.example.bai_4.model.FootballPlayer;
+package com.example.bai_5.repository;
+import com.example.bai_5.model.FootballPlayer;
 
 import java.util.List;
 
@@ -8,5 +8,5 @@ public interface IFootballPlayerRepository {
     FootballPlayer findById(int id);
     Boolean delete(int id);
     void create(FootballPlayer footballPlayer);
-    void edit(FootballPlayer footballPlayer);
+    boolean edit(FootballPlayer footballPlayer);
 }
