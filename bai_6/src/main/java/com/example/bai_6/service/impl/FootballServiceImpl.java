@@ -12,9 +12,10 @@ import org.springframework.stereotype.Service;
 public class FootballServiceImpl implements IFootballService {
     @Autowired
     private IFootballRepository iFootballRepository;
+
     @Override
     public Page<Football> findByNameContainsAndDateOfBirthBetween(String search, String fDate, String tDay, Pageable pageable) {
-        return iFootballRepository.findByNameContainsAndDateOfBirthBetween(search,fDate,tDay,pageable);
+        return iFootballRepository.findByNameContainsAndDateOfBirthBetween(search, fDate, tDay, pageable);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class FootballServiceImpl implements IFootballService {
 
     @Override
     public void update(Football football) {
-        iFootballRepository.save                                                                                                                                                                                                                                                                                                                                                                                                                                                                      (football);
+        iFootballRepository.save(football);
     }
 
     @Override
