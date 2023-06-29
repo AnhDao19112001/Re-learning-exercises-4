@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Bai10Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)   {
         SpringApplication.run(Bai10Application.class, args);
     }
 
