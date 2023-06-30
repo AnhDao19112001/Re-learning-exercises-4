@@ -34,7 +34,7 @@ public class FootballController {
         model.addAttribute("soccer", iFootballService.findById(id));
         return "football/info";
     }
-    @GetMapping("add/{id}")
+    @GetMapping("/add/{id}")
     public String addFavorite(@PathVariable int id, @SessionAttribute("favorite") FavoritePlayerDto favoritePlayerDto,
                               HttpServletResponse response) {
 
