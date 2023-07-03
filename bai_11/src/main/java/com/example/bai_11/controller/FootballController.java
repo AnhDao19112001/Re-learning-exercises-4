@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/api/player")
 @CrossOrigin("*")
 public class FootballController {
     @Autowired
